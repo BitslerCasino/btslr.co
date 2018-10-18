@@ -1,0 +1,32 @@
+{
+  "name": "btslr.co",
+  "version": "1.0.0",
+  "description": "bitsler link shortener",
+  "main": "index.js",
+  "dependencies": {
+    "@koa/cors": "^2.2.2",
+    "dotenv": "^6.1.0",
+    "koa": "^2.5.3",
+    "koa-bodyparser": "^4.2.1",
+    "koa-bouncer": "^6.0.4",
+    "koa-helmet": "^4.0.0",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "pg": "^7.5.0",
+    "pg-lazy": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "seed": "node ./sql/seed.js",
+    "start": "pm2 start ./index.js -i 4 --name btslrco",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bitsler",
+    "shortener"
+  ],
+  "author": "unibtc@gmail.com",
+  "license": "MIT",
+  "repository": "https://github.com/BitslerCasino/btslr.co",
+  "private": true
+}
