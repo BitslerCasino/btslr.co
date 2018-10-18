@@ -19,7 +19,7 @@ function validateUrl(uri) {
     return false;
   }
   uri.pathname = querystring.unescape(uri.pathname).split('/').map(s => slugify(s)).join('/');
-  return uri.toString();
+  return uri;
 }
 async function req(url, data) {
   const opts = {
