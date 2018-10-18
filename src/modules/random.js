@@ -21,7 +21,7 @@ const randomize = (seed, len, splice = false) => {
   }
   return result.join('');
 };
-const isAlphaNumeric = str => !/[^0-9a-z\xDF-\xFF]/g.test(str);
+const isAlphaNumeric = str => !/[^0-9a-zA-Z\xDF-\xFF]/g.test(str);
 exports.generate = () => {
   const alphaseed = randomize(alphanumeric);
   return randomize(alphaseed, config.ID_LENGTH, false);

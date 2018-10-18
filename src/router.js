@@ -118,7 +118,7 @@ router.get('/:sid', async (ctx) => {
   ctx.validateParam('sid').required().toString().trim();
   try {
     if (rand.isValid(ctx.vals.sid)) {
-      let url = await db.getRealUrl(ctx.vals.sid, ctx.real_ip, ctx.headers['user-agent'], ctx.headers['cf-ipcountry']);
+      let url = await db.getRealUrl(ctx.vals.sid, ctx.headers['cf-connecting-ip'], ctx.headers['user-agent'], ctx.headers['cf-ipcountry']);
       if (!url) {
         return ctx.jsonErr(404, 'URL Not Found [Code] 1');
       }
