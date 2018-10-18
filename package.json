@@ -20,7 +20,7 @@
   "devDependencies": {},
   "scripts": {
     "seed": "node ./sql/seed.js",
-    "start": "pm2 start ./index.js -i 4 --name btslrco",
+    "start": "pm2 start ./index.js -i 4 --name btslrco --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
