@@ -12,6 +12,7 @@
     "koa-helmet": "^4.0.0",
     "koa-logger": "^3.2.0",
     "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
     "pg": "^7.5.0",
     "pg-lazy": "^2.0.3"
   },

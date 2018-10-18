@@ -1,5 +1,6 @@
 require('dotenv').config();
 const Koa = require('koa');
+const serve = require('koa-static');
 const cors = require('@koa/cors');
 const config = require('./config');
 const loadMiddlewares = require('./mw');
@@ -27,6 +28,7 @@ app.use(require('koa-bodyparser')({
   }
 }));
 loadMiddlewares(app);
+app.use(serve(require('path').resolve(__dirname, '../public')));
 app.use(async (ctx, next) => {
   ctx.jsonErr = (status, msg) => {
     ctx.type = 'json';
@@ -39,9 +41,6 @@ app.use(async (ctx, next) => {
 // Routes
 // //////////////////////////////////////////////////////////
 app.use(require('./router').routes());
-app.use((ctx) => {
-  ctx.redirect('https://www.bitsler.com');
-});
 app.start = (port = config.PORT) => {
   app.listen(port, () => {
     console.log('Listening on port', port);
