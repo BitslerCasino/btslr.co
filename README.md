@@ -2,12 +2,15 @@
 
 Bitsler's link shortener
 
+### Requirements
+- Nodejs v8.0+
+- Postresql
+
 ### Setup
 - Clone this repository
 - Create a `.env` file in the project's root directory using the example below
 - Install the dependencies `npm install` or `yarn install`
 - Run the app `node index.js`
-
 
 ### API Routes
 
